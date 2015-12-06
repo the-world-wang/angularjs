@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div class="">
+    <input type="text" ng-model="student.name"/>
+    <!-- 有两种形式将模型输出到view中，{{}} 和ng-bind,区别在于第一次载入时，angular引擎还没有启动时，会将花括号之间的内容显示出来
+        用户体验不是特别的好，建议index中用ng-bing
+    -->
+    <p ng-bind="student.name"></p>
+</div>
+
+<script src="../angular-1.4.8/angular-1.3.0.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div ng-controller="myController">
+    <input type="text" ng-model="student.name"/>
+    <p>{{id}}</p>
+</div>
+
+<div ng-controller="SecondController">
+    age:{{age}}
+</div>
+
+<script src="../angular-1.4.8/angular.min.js"></script>
+<script>
+    var app = angular.module('app', []);
+//    可分为显示调用和隐式调用2种方式
+    app.value('department',2);
+    app.controller('myController',function($scope,department){
+        $scope.id = department;
+    });
+
+    app.controller('SecondController',['$scope','department',function($scope,department){
+        $scope.age = department;
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+  <ul ng-controller="StudentListController">
+      <li ng-repeat="student in students">
+          <!-- $index返回当前index，从0开始-->
+            name is {{student.name}},id is {{student.id}}  {{$index}}
+      </li>
+  </ul>
+
+<script src="../angular-1.4.8/angular-1.3.0.js"></script>
+<script>
+    var students = [
+        {name:'wanghao',id:'1'},
+        {name:'wanghao2',id:'2'},
+        {name:'wanghao3',id:'3'}
+    ];
+    function StudentListController($scope){
+        $scope.students = students;
+    }
+</script>
+</body>
+</html>

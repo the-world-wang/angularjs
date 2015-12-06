@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <form ng-submit="whenSubmit()" ng-controller="myController">
+        <!-- 这里的model相当于给scope定义了一个属性-->
+        <input type="text" ng-model="student.name"/>
+        <input type="submit" value="submit">
+    </form>
+
+<script src="../angular-1.4.8/angular-1.3.0.js"></script>
+</body>
+
+<script>
+    var app = angular.module('app',[]);
+    app.controller('myController',function($scope){
+//        显然这里的 submit 里面调用的方法需要在scope里面定义
+        $scope.whenSubmit = function(){
+            window.alert($scope.student.name);
+        };
+    });
+</script>
+</html>

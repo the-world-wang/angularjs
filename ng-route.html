@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript" src="../angular-1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="../angular-1.4.8/angular-route.js"></script>
+	</head>
+
+	<body>
+	<div ng-controller="route1Controller">
+		<ul>
+			<li><a href="#/">route1</a></li>
+			<li><a href="#/route2">route2</a></li>
+			<li><a href="#/route3">route3</a></li>
+		</ul>
+	</div>
+
+	<div ng-view></div>
+
+		<script>
+			var app = angular.module('app',['ngRoute']);
+			app.config(['$routeProvider',function($routerProvider){
+				$routerProvider.when('/',{
+					templateUrl:'route-1.html',
+					controller:'route1Controller'
+				}).when('/route2',{
+					templateUrl:'route-2.html',
+					controller:'route2Controller'
+				}).when('/route3',{
+					templateUrl:'route-3.html',
+					controller:'route3Controller'
+				}).otherwise({
+					redirectTo:'/'
+				})
+			}]);
+			app.controller('route1Controller',function(){
+
+			});
+			app.controller('route2Controller',function(){
+
+			});
+			app.controller('route3Controller',function(){
+
+			});
+		</script>
+	</body>
+</html>
